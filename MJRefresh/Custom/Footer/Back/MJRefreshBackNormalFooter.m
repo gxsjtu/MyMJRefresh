@@ -21,8 +21,8 @@
 - (UIImageView *)arrowView
 {
     if (!_arrowView) {
-        UIImageView *arrowView = [[UIImageView alloc] initWithImage:[NSBundle mj_arrowImage]];
-        [self addSubview:_arrowView = arrowView];
+        //UIImageView *arrowView = [[UIImageView alloc] initWithImage:[NSBundle mj_arrowImage]];
+        //[self addSubview:_arrowView = arrowView];
     }
     return _arrowView;
 }
@@ -75,8 +75,8 @@
     
     // 箭头
     if (self.arrowView.constraints.count == 0) {
-        self.arrowView.mj_size = self.arrowView.image.size;
-        self.arrowView.center = arrowCenter;
+        //self.arrowView.mj_size = self.arrowView.image.size;
+       // self.arrowView.center = arrowCenter;
     }
     
     // 圈圈
@@ -114,11 +114,11 @@
             }];
         }
     } else if (state == MJRefreshStatePulling) {
-        self.arrowView.hidden = NO;
+        self.arrowView.hidden = YES;
         [self.loadingView stopAnimating];
-        [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
-            self.arrowView.transform = CGAffineTransformIdentity;
-        }];
+        //[UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
+       //     self.arrowView.transform = CGAffineTransformIdentity;
+       // }];
     } else if (state == MJRefreshStateRefreshing) {
         self.arrowView.hidden = YES;
         [self.loadingView startAnimating];
